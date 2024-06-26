@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신청 확인</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    .info-box, .apply-info-box, .return-info-box, .payment-box {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .info-box h5, .apply-info-box h5, .return-info-box h5, .payment-box h5 {
+      margin-bottom: 15px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+<!-- Include the header using Thymeleaf fragment -->
+<header th:replace="fragments/header :: header"></header>
+
+<main>
+  <div class="container">
+    <!-- 회원 정보 div -->
+    <div class="info-box">
+      <h5>회원 정보</h5>
+      <div class="form-group">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="phone">휴대폰 번호</label>
+        <input type="tel" id="phone" name="phone" class="form-control" readonly>
+      </div>
+    </div>
+
+    <!-- 신청 정보 div -->
+    <div class="apply-info-box">
+      <h5>신청 정보</h5>
+      <div class="form-group">
+        <label for="address">맡기는 장소</label>
+        <input type="text" id="address" name="address" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="deposit-date">맡기는 날짜</label>
+        <input type="date" id="deposit-date" name="deposit-date" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="receive-date">수령 예정일</label>
+        <input type="date" id="receive-date" name="receive-date" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="purchase-string">구매 스트링</label>
+        <input type="text" id="purchase-string" name="purchase-string" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="purchase-grip">구매 그립</label>
+        <input type="text" id="purchase-grip" name="purchase-grip" class="form-control" readonly>
+      </div>
+    </div>
+
+    <!-- 수거/반납 정보 div -->
+    <div class="return-info-box">
+      <h5>수거/반납 정보</h5>
+      <div class="form-group">
+        <label for="collect-date">수거일</label>
+        <input type="date" id="collect-date" name="collect-date" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="return-date">반납 예상일</label>
+        <input type="date" id="return-date" name="return-date" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="amount">금액</label>
+        <input type="text" id="amount" name="amount" class="form-control" readonly>
+      </div>
+    </div>
+
+    <!-- 결제 방법 선택 div -->
+    <div class="payment-box">
+      <h5>결제 방법</h5>
+      <div class="form-group radio-group">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard">
+          <label class="form-check-label" for="creditCard">
+            신용카드
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="kakaoPay" value="kakaoPay">
+          <label class="form-check-label" for="kakaoPay">
+            카카오페이
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="naverPay" value="naverPay">
+          <label class="form-check-label" for="naverPay">
+            네이버페이
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="mobilePayment" value="mobilePayment">
+          <label class="form-check-label" for="mobilePayment">
+            휴대폰결제
+          </label>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary btn-block">결제하기</button>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

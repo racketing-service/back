@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모바일 웹 페이지</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header th:replace="fragments/header :: header"></header>
+<main>
+  <div class="image-button mt-3 text-center">
+    <a th:href="@{/apply}">
+      <img src="https://via.placeholder.com/150" alt="Image Button" class="img-thumbnail">
+    </a>
+  </div>
+  <div class="gallery mt-3">
+    <img src="https://via.placeholder.com/100" alt="Gallery Image 1" class="img-fluid">
+    <img src="https://via.placeholder.com/100" alt="Gallery Image 2" class="img-fluid">
+    <img src="https://via.placeholder.com/100" alt="Gallery Image 3" class="img-fluid">
+  </div>
+</main>
+</body>
+</html>

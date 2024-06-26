@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 페이지</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .login-container {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+    }
+    .login-form {
+      margin-bottom: 10px;
+    }
+    .divider {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .divider hr {
+      margin: 10px auto;
+      width: 90%;
+    }
+    .signup-options img {
+      width: 100%;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<!-- Include the header using Thymeleaf fragment -->
+<div th:replace="fragments/header :: header"></div>
+
+<div class="login-container">
+  <h4 class="text-center">로그인</h4>
+  <form class="login-form" th:action="@{/login}" method="post">
+    <div th:if="${loginError}" class="alert alert-danger" role="alert">
+      로그인 실패! 아이디 또는 비밀번호를 확인해주세요.
+    </div>
+    <input type="text" id="username" name="username" class="form-control" placeholder="아이디" required autofocus>
+    <input type="password" id="password" name="password" class="form-control" placeholder="비밀번호" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+  </form>
+  <div class="divider">
+    <hr>
+    <p>회원가입</p>
+  </div>
+  <div class="signup-options">
+    <a th:href="@{/sign-up}"
+    <img th:src="@{https://via.placeholder.com/150?text=이메일로+회원가입}" alt="이메일로 회원가입">
+    </a>
+    <img th:src="@{https://via.placeholder.com/150?text=카카오로+회원가입}" alt="카카오로 회원가입">
+    <img th:src="@{https://via.placeholder.com/150?text=네이버로+회원가입}" alt="네이버로 회원가입">
+  </div>
+</div>
+</body>
+</html>

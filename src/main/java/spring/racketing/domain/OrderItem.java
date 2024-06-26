@@ -3,7 +3,7 @@ package spring.racketing.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import racketshare.racketing.domain.item.Item;
+import spring.racketing.domain.item.Item;
 
 import static jakarta.persistence.FetchType.LAZY;
 
