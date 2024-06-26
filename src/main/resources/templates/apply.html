@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신청하기</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    .address-input-group {
+      display: flex;
+      align-items: center;
+    }
+    .address-input-group input {
+      flex: 1;
+      pointer-events: none; /* input box를 읽기 전용으로 만듭니다 */
+      background-color: #e9ecef;
+    }
+    .address-input-group button {
+      margin-left: 10px;
+    }
+    .image-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .image-buttons img {
+      width: 45%;
+      cursor: pointer;
+    }
+    .date-picker {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .submit-button {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<!-- Include the header using Thymeleaf fragment -->
+<header th:replace="fragments/header :: header"></header>
+
+<main>
+  <div class="container">
+    <div class="form-group">
+      <label for="address">맡기는 장소 (주소)</label>
+      <div class="address-input-group">
+        <input type="text" id="address" name="address" class="form-control" readonly>
+        <button type="button" class="btn btn-primary">검색</button>
+      </div>
+    </div>
+    <div class="image-buttons">
+      <img src="https://via.placeholder.com/200" alt="Image Button 1" class="img-fluid">
+      <img src="https://via.placeholder.com/200" alt="Image Button 2" class="img-fluid">
+    </div>
+    <div class="date-picker">
+      <label for="date">맡기는 날짜</label>
+      <input type="date" id="date" name="date" class="form-control">
+    </div>
+    <div class="submit-button">
+      <a href="/apply-confirm" class="btn btn-success">신청하기</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

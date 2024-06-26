@@ -1,0 +1,17 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar-brand img, .nav img {
+    cursor: pointer;
+}
+
+.image-button img {
+    cursor: pointer;
+    width: 100%; /* Adjust as needed */
+}
+
+.gallery img {
+    width: 100%; /* Adjust as needed for responsiveness */
+    margin-bottom: 10px; /* Space between images */
+}

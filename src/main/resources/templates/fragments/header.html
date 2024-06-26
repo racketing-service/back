@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Header Fragment</title>
+</head>
+<body>
+<header th:fragment="header">
+  <div class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+    <div class="navbar-brand">
+      <a th:href="@{/}">
+        <img src="images/logo.png" alt="Logo" style="height: 40px;">
+      </a>
+    </div>
+    <div class="nav">
+      <img src="images/mypage-icon.png" alt="My Page" style="height: 30px; margin-right: 10px;">
+      <img src="images/settings-icon.png" alt="Settings" style="height: 30px;">
+    </div>
+  </div>
+</header>
+</body>
+</html>
